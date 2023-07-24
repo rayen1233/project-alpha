@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>cart | alpha store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css.css">
+    <style>
+        .empty-cart-message {
+          font-size: 100px;
+          text-align: center;
+          margin-top: 100px;
+        }
+      
+        .hide {
+          display: none;
+        }
+      </style>
+</head>
+<body>
+  <header class="navbar">
+    <!-- Navigation Bar -->
+    <nav>
+        <img src="/image/logo.png" class="logo">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="features.html">features</a></li>
+            <li><a href="contact.html">Contact</a></li> 
+            <li><a href="cart.html"><img src="/image/pngwing.com (1).png" style="width: 20px;" ></a></li> <!-- Cart icon -->
+            <li><a href="sign up.html"><button style="width: 120px; height: 50px; font-size: 20px;" class="proceed-to-buy">sign in</button></a></li>
+        </ul>
+    </nav>
+  </header>
+  <div class="small-container cart-page">
+    <!-- Cart Items will be dynamically added here -->
+  </div>
+  <!-- Total Price -->
+  <div class="total-price">
+    <table>
+      <tr>
+        <td style="font-size: 30px;" id="sub">Subtotal:</td>
+        <td id="subtotal" style="font-size: 30px;">$0.00</td>
+      </tr>
+    </table>
+  </div>
+  <div class="proceed-to-buy-container">
+    <button class="proceed-to-buy">Proceed to Buy</button>
+  </div>
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <h3>ALPHA STORE</h3>
+      <p>hope you like the content here is our social media place</p>
+      <ul class="socials">
+        <li><a href="https://www.instagram.com/alpha.studios1/"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="https://twitter.com/ALPHA_STU"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.youtube.com/@ALPHASTUDIO-hs2rd"><i class="fa fa-youtube"></i></a></li>
+      </ul>
+    </div>
+  </footer>  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    var cartItems = [];
+  
+    function recalculateTotal() {
+      var totalPrice = 0;
+      $('.product-card').each(function() {
+        var price = parseFloat($(this).find('.price').text().replace('$', ''));
+        var quantity = parseInt($(this).find('.quantity').val());
+        quantity = Math.max(1, quantity); // Ensure quantity is at least 1
+        totalPrice += price * quantity;
+        $(this).find('.quantity').val(quantity); // Update input value if needed
+      });
+      $('#subtotal').text('$' + totalPrice.toFixed(2));
+    }
+  
+    function addToCart(product) {
+      cartItems.push(product);
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      displayCartItems();
+      recalculateTotal();
+    }
+  
+    function removeFromCart(index) {
+      cartItems.splice(index, 1);
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      displayCartItems();
+      recalculateTotal();
+    }
+  
+    function displayCartItems() {
+      $('.cart-page').empty(); // Clear previous cart items
+  
+      if (cartItems.length === 0) {
+        // Display message when the cart is empty
+        var emptyMessage = $('<p class="empty-cart-message">The cart is empty</p>');
+        $('.cart-page').append(emptyMessage);
+  
+        // Hide the subtotal and "Proceed to Buy" button
+        $('#subtotal').addClass('hide');
+        $('.proceed-to-buy').addClass('hide');
+        $('#sub').addClass('hide');
+      } else {
+        // Display cart items when the cart is not empty
+        cartItems.forEach(function(product, index) {
+          var productCard = $('<div class="product-card">');
+          var productImage = $('<img src="' + product.image + '" alt="" class="product-image">');
+          var productInfo = $('<div class="product-info">');
+          var productName = $('<p class="product-name">' + product.name + '</p>');
+          var quantityPriceDiv = $('<div class="quantity-price">');
+          var quantityInput = $('<input type="number" value="' + product.quantity + '" class="quantity" onchange="recalculateTotal()">');
+          var productPrice = $('<p class="price">$' + product.price.toFixed(2) + '</p>');
+          var productActions = $('<div class="product-actions">');
+          var removeLink = $('<a href="#" class="Remove" onclick="removeFromCart(' + index + ')">Remove</a>');
+          var wishlistLink = $('<a href="#" class="wishlist">wishlist</a>');
+  
+          productActions.append(removeLink, wishlistLink);
+          quantityPriceDiv.append(quantityInput, productPrice);
+          productInfo.append(productName, quantityPriceDiv, productActions);
+          productCard.append(productImage, productInfo);
+          $('.cart-page').append(productCard);
+        });
+  
+        // Show the subtotal and "Proceed to Buy" button
+        $('#subtotal').removeClass('hide');
+        $('.proceed-to-buy').removeClass('hide');
+        $('#sub').removeClass('hide');
+      }
+    }
+  
+    function toggleWishlist(button) {
+      $(button).toggleClass('clicked');
+    }
+  
+    $(document).ready(function() {
+      var storedCartItems = localStorage.getItem('cartItems');
+      if (storedCartItems) {
+        cartItems = JSON.parse(storedCartItems);
+        displayCartItems();
+        recalculateTotal();
+      }
+  
+      // Wishlist button click event
+      $('.wishlist').click(function(e) {
+        e.preventDefault();
+        toggleWishlist(this);
+      });
+    });
+  </script>
+</body>
+</html>

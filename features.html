@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<!-- Load Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet" />
+
+<!-- Load Font Awesome icons -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<title>feature | alpha store</title>
+<link rel="stylesheet" href="css.css"> <!-- Load external CSS file -->
+
+</head>
+
+<body>
+  <!-- Header section -->
+  <header class="navbar">
+    <nav>
+        <img src="/image/logo.png" class="logo"> <!-- Logo image -->
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="features.html">features</a></li>
+          <li><a href="contact.html">Contact</a></li> 
+          <li><a href="cart.html"><img src="/image/pngwing.com (1).png" style="width: 20px;" ></a></li> <!-- Cart icon -->
+          <li><a href="sign up.html"><button style="width: 120px; height: 50px;font-size: 20px;" class="proceed-to-buy">sign in</button></a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <!-- Product Section -->
+  <div class="ex">
+    <!-- Product 1 -->
+    <div class="expr">
+      <img src="/image/ALPHA STD POST 1.jpg" class="exim">
+      <h3 class="h3">game developing</h3> 
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>Price: $1000</p> 
+      <button class="corner-button" onclick="addToCart('Game Development', 1000, '/image/ALPHA STD POST 1.jpg')">add to cart</button>
+    </div>
+    <!-- Product 2 -->
+    <div class="expr">
+      <img src="/image/ALPHA STD POST 2.jpg" class="exim">
+      <h3 class="h3">graphic design</h3> 
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <p>Price: $20</p> 
+      <button class="corner-button" onclick="addToCart('Graphic Design', 20, '/image/ALPHA STD POST 2.jpg')">add to cart</button>
+    </div>
+    <!-- Product 3 -->
+    <div class="expr">
+      <img src="/image/ALPHA STD POST 3.jpg" class="exim">
+      <h3 class="h3">design pack</h3> 
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <p>Price: $100</p> 
+      <button class="corner-button" onclick="addToCart('Design Pack', 100, '/image/ALPHA STD POST 3.jpg')">add to cart</button>
+    </div>
+  </div>
+
+  <!-- More Product Section -->
+  <div class="ex">
+    <!-- Product 4 -->
+    <div class="expr">
+      <img src="/image/ALPHA STD POST 4.jpg" class="exim">
+      <h3 class="h3">pixel art</h3> 
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>Price: $50</p> 
+      <button class="corner-button" onclick="addToCart('Pixel Art', 50, '/image/ALPHA STD POST 4.jpg')">add to cart</button>
+    </div>
+    <!-- Product 5 -->
+    <div class="expr">
+      <img src="/image/ALPHA STD POST 5.jpg" class="exim">
+      <h3 class="h3">video editing</h3> 
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>Price: $30</p> 
+      <button class="corner-button" onclick="addToCart('Video Editing', 30, '/image/ALPHA STD POST 5.jpg')">add to cart</button>
+    </div>
+    <!-- Product 6 -->
+    <div class="expr">
+      <img src="/image/ALPHA STD POST 6.jpg" class="exim">
+      <h3 class="h3">story writing</h3> 
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>Price: $70</p> 
+      <button class="corner-button" onclick="addToCart('Story Writing', 70, '/image/ALPHA STD POST 6.jpg')">add to cart</button>
+    </div>
+  </div>
+
+  <!-- Final Product Section -->
+  <div class="ex">
+    <!-- Product 7 -->
+    <div class="expr">
+      <img src="/image/ALPHA STD POST 7.jpg" class="exim">
+      <h3 class="h3">voice recording</h3> 
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>Price: $10</p> 
+      <button class="corner-button" onclick="addToCart('Voice Recording', 10, '/image/ALPHA STD POST 7.jpg')">add to cart</button>
+    </div>
+  </div>
+  <br>
+  <br>
+  
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <h3>ALPHA STORE</h3>
+      <p>hope you like the content here is our social media place</p>
+      <ul class="socials">
+        <li><a href="https://www.instagram.com/alpha.studios1/"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="https://twitter.com/ALPHA_STU"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.youtube.com/@ALPHASTUDIO-hs2rd"><i class="fa fa-youtube"></i></a></li>
+      </ul>
+    </div>
+  </footer>  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function addToCart(name, price, image) {
+      var quantity = 1;
+      var product = {
+        name: name,
+        price: price,
+        quantity: quantity,
+        image: image
+      };
+      addToCartLocalStorage(product);
+    }
+
+    function addToCartLocalStorage(product) {
+      var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      var existingProductIndex = cartItems.findIndex(function(item) {
+        return item.name === product.name;
+      });
+
+      if (existingProductIndex !== -1) {
+        cartItems[existingProductIndex].quantity += 1;
+      } else {
+        cartItems.push(product);
+      }
+
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+  </script>
+</body>
+</html>

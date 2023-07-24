@@ -1,0 +1,560 @@
+* {
+  padding: 0%;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'josefin sans', sans-serif;
+  background-color: black;
+  color: white;
+}
+
+td a {
+  color: black;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+form {
+  background: black;
+  width: 640px;
+  margin: 50px auto;
+  max-width: 97%;
+  border-radius: 4px;
+  padding: 55px 30px;
+}
+
+form .title h2 {
+  letter-spacing: 6px;
+  border-bottom: 1px solid white;
+  display: inline-block;
+  padding-bottom: 8px;
+  margin-bottom: 32px;
+}
+
+form .half {
+  display: flex;
+  justify-content: space-between;
+}
+
+form .half .item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  width: 48%;
+}
+
+form label {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 3.5px;
+  margin-bottom: 16px;
+}
+
+form .half .item input {
+  border-radius: 4px;
+  border: 1px solid white;
+  outline: 0;
+  padding: 16px;
+  width: 100%;
+  height: 44px;
+  background: transparent;
+  font-size: 17px;
+}
+
+form .full {
+  margin-bottom: 24px;
+}
+
+.fa {
+  color: black;
+}
+
+form .full textarea {
+  background: transparent;
+  border-radius: 4px;
+  border: 1px solid white;
+  outline: 0;
+  padding: 12px 16px;
+  width: 100%;
+  height: 200px;
+  font-size: 17px;
+}
+
+form .action {
+  margin-bottom: 32px;
+}
+
+form .action input {
+  background: transparent;
+  border-radius: 4px;
+  border: 1px solid white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  height: 44px;
+  letter-spacing: 3px;
+  outline: 0;
+  padding: 0 20px 0 22px;
+  margin-right: 10px;
+}
+
+.small-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #222222; /* Changed to a lighter shade of black */
+  border: 1px solid black;
+  border-radius: 10px; /* Increased border radius for a more rounded look */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow for a 3D effect */
+  display: flex;
+  align-items: center;
+}
+
+.product-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: white; /* Changed product names to white for better readability */
+}
+
+
+.quantity-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.quantity {
+  width: 60px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #333333; /* Changed quantity inputs to a darker color */
+  font-size: 16px;
+  color: white; /* Changed quantity text color to white */
+}
+
+.price {
+  font-size: 20px;
+}
+
+.product-actions {
+  margin-top: 15px;
+}
+
+.Remove {
+  color: red;
+  text-decoration: none;
+}
+
+.Remove:hover {
+  color: darkred;
+}
+
+.wishlist {
+  color: white;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.wishlist.clicked {
+  color: red; /* Change the color to red when the 'clicked' class is present */
+}
+
+.wishlist:hover {
+  color: darkblue;
+}
+.proceed-to-buy-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.proceed-to-buy {
+  background: black;
+  color: white;
+  border: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s; /* Add transition for a smooth hover effect */
+  font-size: 24px;
+}
+
+.proceed-to-buy:hover {
+  background: #333; /* Darken the button on hover */
+}
+
+.price {
+  font-size: 20px;
+}
+
+.total-price {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  margin-top: 20px;
+  font-size: 24px; /* Increased font size for the total price */
+  color: white; /* Changed total price text color to white */
+}
+
+.total-price table {
+  font-size: 24px;
+  color: white;
+}
+
+form .action input[type="submit"] {
+  background: black;
+  color: white;
+}
+
+form .icons a {
+  border: 1px solid white;
+  border-radius: 50%;
+  line-height: 36px;
+  text-align: center;
+  font-weight: 600;
+  width: 38px;
+  margin-right: 10px;
+}
+
+form .half .item input,
+form .full textarea,
+form .action input[type="reset"]:hover,
+form .icons a:hover {
+  background: rgba(255, 255, 255, 0.075);
+}
+
+@media (max-width: 480px) {
+  form .half {
+    flex-direction: column;
+  }
+  form .half .item {
+    width: 100%;
+  }
+  form .action {
+    display: flex;
+    flex-direction: column;
+  }
+  form .action input {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+
+td input {
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+}
+
+.total-price-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: #f0f0f0;
+  margin-bottom: 0;
+}
+
+/* Navbar styles */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: black;
+}
+
+.logo {
+  width: 60px;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: grey;
+}
+
+img {
+  width: 300px;
+}
+
+/* Add any other custom styles or overrides below */
+
+element.style {
+}
+.cart{
+    color: white;
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .col-4 {
+    flex-basis: 25%;
+    padding: 10px;
+    display: inline-block;
+    background-position: center;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; 
+  }
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .col-4:nth-child(5) ~ .col-4 {
+    flex-basis: 100%;
+  }
+body {
+    font-family: "Poppins", sans-serif;
+}
+.home {
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+    align-items: center;
+  }
+  .detail{
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+    align-items: center;
+  }
+  section {
+    padding: 7px 10%;
+  }
+  
+  .home-text {
+    color: white;
+    display: inline-block;
+    padding-right: 200px; 
+  }
+  .detail-text {
+    color: white;
+    display: inline-block;
+    padding-left: 100px; 
+  }
+  .image {
+    width: 550px;
+  }
+  .image1{
+    width: 650px;
+  }
+  h3{
+    color: white;
+  }
+  h1 {
+    color: white;
+    font-size: 40px;
+  }
+  .expr {
+    background-color: white;
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+    margin-left: 30px; /* Increase the margin from right to left */
+    margin-bottom: 10px;
+  }
+  .review{    padding: 8px 8%;
+    display: flex;
+    justify-content: flex-end; /* Align items from right to left */
+
+  }
+  .ex {
+    padding: 10px 10%;
+    display: flex;
+    justify-content: flex-end; /* Align items from right to left */
+  }
+  
+  
+  .expr {
+    position: relative;
+  }
+  
+  .corner-button {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .expr h3, .expr p {
+    background-color: transparent; 
+    color: black; 
+    text-align: center; 
+  }
+  .exim{
+    align-items: center;
+    border-radius: 10px;
+    padding-top: 10px;
+    background-color: white;
+  }
+.rating {
+  background-color: transparent; 
+}
+.fa {
+  background-color: transparent; 
+}
+.service1{
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+}
+.service{
+  padding: 10px 10%;
+  display: flex;
+  justify-content: space-between;
+}
+footer{
+  position: absolute;
+  background-color: gray;
+  height: auto;
+  width: 98.7vw;
+  font-family: "Open Sans";
+
+  color: #fff;
+}
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h3{
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+}
+.socials{
+  color: white;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+.socials li{
+  margin: 0 10px;
+}
+.socials a{
+  text-decoration: none;
+  color: #fff;
+}
+.socials a i{
+  background-color: transparent; 
+  color: white;
+  font-size: 1.1rem;
+  transition: color .4s ease;
+
+}
+.socials a:hover i{
+  color: aqua;
+}
+
+.footer-bottom{
+  background: #000;
+  width: 100vw;
+  padding: 20px 0;
+  text-align: center;
+}
+.footer-bottom p{
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom span{
+  text-transform: uppercase;
+  opacity: .4;
+  font-weight: 200;
+}
+.corner-button{
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  background: black;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.corner-button:hover, .btn:focus, .btn:active{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(0.5.0.5);
+  transform: scale(0.5.0.5);
+}
+.expr:hover, .btn:focus, .btn:active{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
